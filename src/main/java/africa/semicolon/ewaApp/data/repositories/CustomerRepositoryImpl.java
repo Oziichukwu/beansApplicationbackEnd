@@ -10,7 +10,7 @@ public class CustomerRepositoryImpl implements CustomerRepository{
 
     @Override
     public Customer save(Customer customer) {
-        database.put(customer.getEmail(), customer);
+        database.put(customer.getEmail() , customer);
         return customer;
     }
 
