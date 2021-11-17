@@ -37,6 +37,7 @@ public class ModelMapper {
         order.setBeansType(addOrderRequest.getBeansType());
         order.setReceiverName(addOrderRequest.getReceiverName());
         order.setDeliveryAddress(addOrderRequest.getDeliveryAddress());
+        order.setCustomerEmail(addOrderRequest.getCustomerEmail());
 
         return order;
     }
