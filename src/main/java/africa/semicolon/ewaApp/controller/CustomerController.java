@@ -14,7 +14,7 @@ public class CustomerController {
 
     private final CustomerServices customerServices = new CustomerServicesImpl();
 
-    @PostMapping("/api/v1/sender")
+    @PostMapping("/api/v1/customer")
     public RegisterCustomerResponse registerCustomer(@RequestBody RegisterCustomerRequest registerCustomerRequest){
         return customerServices.registerCustomer(registerCustomerRequest);
     }
