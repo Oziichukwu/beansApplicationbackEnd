@@ -39,4 +39,9 @@ public class CustomerRepositoryImpl implements CustomerRepository{
     public void delete(Customer customer) {
         database.remove(customer.getEmail());
     }
+
+    @Override
+    public void deleteAll() {
+        database.clear();
+    }
 }
