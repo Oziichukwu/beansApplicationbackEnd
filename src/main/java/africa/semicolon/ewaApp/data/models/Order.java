@@ -9,4 +9,5 @@ public class Order {
     private String receiverName;
     private String deliveryAddress;
     private String receiversPhone;
+    private String customerEmail;
 }
