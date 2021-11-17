@@ -10,4 +10,5 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String userName;
+    private String password;
 }
