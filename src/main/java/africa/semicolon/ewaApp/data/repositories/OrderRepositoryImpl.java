@@ -9,13 +9,14 @@ public class OrderRepositoryImpl implements OrderRepository{
     private static Map<Integer, Order>database = new HashMap<>();
     @Override
     public Order save(Order order) {
+
         Integer id = null;
         if (order.getId() == null){
             id = database.size() + 1;
             order.setId(id);
         }
         id = order.getId();
-        database.put(id , order);
+        database.put(id, order);
         return database.get(id);
     }
 
