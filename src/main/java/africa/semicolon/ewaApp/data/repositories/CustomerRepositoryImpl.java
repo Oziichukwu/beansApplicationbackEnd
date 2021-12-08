@@ -15,9 +15,8 @@ public class CustomerRepositoryImpl implements CustomerRepository{
     }
 
     @Override
-    public Optional<Customer> findCustomerById(String email) {
-        if (database.containsKey(email)) return Optional.of(database.get(email));
-        return Optional.empty();
+    public Customer findCustomerById(String email) {
+        return database.get(email);
     }
 
     @Override
