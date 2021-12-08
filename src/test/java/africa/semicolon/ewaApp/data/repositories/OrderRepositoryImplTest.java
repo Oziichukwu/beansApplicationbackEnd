@@ -49,7 +49,7 @@ class OrderRepositoryImplTest {
     @Test
     void findOrderById() {
         Order savedOrder = placeOrderInfo();
-        assertEquals(savedOrder, orderRepository.findOrderById(savedOrder.getId()).get());
+        assertEquals(savedOrder, orderRepository.findOrderById(savedOrder.getId()));
     }
 
     @Test
