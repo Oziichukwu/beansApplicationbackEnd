@@ -49,7 +49,7 @@ class CustomerRepositoryImplTest {
     void findCustomerById() {
         Customer savedCustomer =customerTestCase();
 
-        assertEquals(savedCustomer, customerRepository.findCustomerById(savedCustomer.getEmail()).get());
+        assertEquals(savedCustomer, customerRepository.findCustomerById(savedCustomer.getEmail()));
     }
 
     @Test
