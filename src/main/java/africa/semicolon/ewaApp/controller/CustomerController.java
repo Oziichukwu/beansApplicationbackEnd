@@ -21,7 +21,7 @@ public class CustomerController {
     }
     @CrossOrigin(origins = "http://localhost:3001/")
     @GetMapping("/api/customer/{email}")
-    public Optional<Customer> findCustomerById( @PathVariable String email){
+    public Customer findCustomerById( @PathVariable String email){
         return customerServices.findCustomerByEmail(email);
     }
 

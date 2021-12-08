@@ -29,7 +29,7 @@ public class OrderController {
     }
 
     @GetMapping("/api/order/{id}")
-    public Optional<Order>findByOrderId(@PathVariable ("id")Integer id){
+    public Order findByOrderId(@PathVariable ("id")Integer id){
         return orderServices.findOrderById(id);
     }
 }
