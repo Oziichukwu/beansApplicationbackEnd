@@ -10,7 +10,6 @@ import africa.semicolon.ewaApp.exceptions.CustomerDoesNotExistException;
 import africa.semicolon.ewaApp.utils.ModelMapper;
 
 import java.util.List;
-import java.util.Optional;
 
 public class OrderServicesImpl implements OrderServices{
     private final static OrderRepository orderRepository = new OrderRepositoryImpl();
@@ -18,8 +17,8 @@ public class OrderServicesImpl implements OrderServices{
     @Override
     public AddOrderResponse addOrder(AddOrderRequest addOrderRequest){
 
-        Optional<Customer> CustomerOptional = customerServices.findCustomerByEmail(addOrderRequest.getCustomerEmail());
-        if (CustomerOptional.isEmpty()) throw  new CustomerDoesNotExistException("Customer not Registered");
+        Customer CustomerOptional = customerServices.findCustomerByEmail(addOrderRequest.getCustomerEmail());
+        if (CustomerOptional == null) throw  new CustomerDoesNotExistException("Customer not Registered");
         Order order = ModelMapper.map(addOrderRequest);
 
         Order savedOrder = orderRepository.save(order);
@@ -33,7 +32,7 @@ public class OrderServicesImpl implements OrderServices{
     }
 
     @Override
-    public Optional<Order> findOrderById(Integer orderId) {
+    public Order findOrderById(Integer orderId) {
         return orderRepository.findOrderById(orderId);
     }
 

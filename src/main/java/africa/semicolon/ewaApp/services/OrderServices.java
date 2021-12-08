@@ -14,5 +14,5 @@ public interface OrderServices {
 
     List<Order> getAllOrders();
 
-    Optional<Order>findOrderById(Integer orderId);
+    Order findOrderById(Integer orderId);
 }

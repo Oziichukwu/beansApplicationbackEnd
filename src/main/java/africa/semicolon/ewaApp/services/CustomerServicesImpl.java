@@ -17,8 +17,8 @@ public class CustomerServicesImpl implements CustomerServices{
     @Override
     public RegisterCustomerResponse registerCustomer(RegisterCustomerRequest registerCustomerRequest) {
 
-        Optional<Customer>savedCustomerInDb = customerRepository.findCustomerById(registerCustomerRequest.getEmail());
-        if (savedCustomerInDb.isPresent()) throw new DuplicateCustomerException(registerCustomerRequest.getEmail()+ "already exist") ;
+        Customer savedCustomerInDb = customerRepository.findCustomerById(registerCustomerRequest.getEmail());
+        if (savedCustomerInDb != null) throw new DuplicateCustomerException(registerCustomerRequest.getEmail()+ "already exist") ;
         Customer customer = ModelMapper.map(registerCustomerRequest);
 
         Customer savedCustomer = customerRepository.save(customer);
@@ -32,7 +32,7 @@ public class CustomerServicesImpl implements CustomerServices{
     }
 
     @Override
-    public Optional<Customer> findCustomerByEmail(String email) {
+    public Customer findCustomerByEmail(String email) {
 
         return customerRepository.findCustomerById(email);
     }
