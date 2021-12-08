@@ -21,9 +21,8 @@ public class OrderRepositoryImpl implements OrderRepository{
     }
 
     @Override
-    public Optional<Order> findOrderById(Integer orderId) {
-        if (database.containsKey(orderId)) return Optional.of(database.get(orderId));
-        return Optional.empty();
+    public Order findOrderById(Integer orderId) {
+        return database.get(orderId);
     }
 
     @Override

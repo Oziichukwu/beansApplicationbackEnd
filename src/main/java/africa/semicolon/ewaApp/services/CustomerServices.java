@@ -15,7 +15,7 @@ public interface CustomerServices {
 
     List<Customer> findAllCustomers();
 
-    Optional<Customer> findCustomerByEmail(String email);
+    Customer findCustomerByEmail(String email);
 
     void deleteAllCustomers();
 }
